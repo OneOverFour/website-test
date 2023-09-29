@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Torrent Tracker - Home</title>
+</head>
+<body>
+    <h1>Welcome to the Torrent Tracker</h1>
+    <h2>Available Torrents</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Uploader</th>
+                <th>Size (MB)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for torrent in torrents %}
+                <tr>
+                    <td>{{ torrent.name }}</td>
+                    <td>{{ torrent.user.username }}</td>
+                    <td>{{ torrent.size_mb }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/register">Register an account</a>
+    <a href="/login">Login to your account</a>
+</body>
+</html>
